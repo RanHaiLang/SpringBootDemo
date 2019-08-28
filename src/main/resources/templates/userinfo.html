@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>用户详情</title>
+</head>
+<body>
+<div>
+    <p>姓名：<span data-th-text="*{userInfo.name}"></span></p>
+    <p>性别：<span th:text="*{userInfo.gender=='1'?'男':'女'}"></span></p>
+    <p>电话：<span th:text="${userInfo.mobile}"></span></p>
+    <p>二维码：<img data-th-src="@{${userInfo.qr_code}}"/></p>
+    <p>头像：<img data-th-src="@{${userInfo.avatar}}"/></p>
+</div>
+</body>
+</html>
